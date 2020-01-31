@@ -4,7 +4,7 @@ kind: Kustomization
 configMapGenerator:
 - name: keycloak-gatekeeper
   files:
-  - config.yml=conf/config_sample.yml
+  - config.yml=conf/config.yml
   - forbidden.html.tmpl=conf/forbidden.html.tmpl
   - sign_in.html.tmpl=conf/sign_in.html.tmpl
 
