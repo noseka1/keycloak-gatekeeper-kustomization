@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak-gatekeeper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak-gatekeeper
+  template:
+    metadata:
+      labels:
+        app: keycloak-gatekeeper
+    spec:
+#      securityContext:
+#        fsGroup: 1000
+#        runAsNonRoot: true
+#        runAsUser: 1000
+      containers:
+      - name: keycloak-gatekeeper
+        image: quay.io/keycloak/keycloak-gatekeeper:8.0.1
+        ports:
+        - name: http
+          containerPort: 3000
+          protocol: TCP
+        args:
+        - --config
+        - /opt/conf/config.yml
+        - --sign-in-page
+        - /opt/conf/sign_in.html.tmpl
+        - --forbidden-page
+        - /opt/conf/forbidden.html.tmpl
+        volumeMounts:
+        - name: conf
+          mountPath: /opt/conf
+      volumes:
+      - name: conf
+        configMap:
+          name: keycloak-gatekeeper
