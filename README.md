@@ -1,2 +1,1 @@
-# keycloak-gatekeeper-kustomization
-Kustomization for Deploying keycloak-gatekeeper on OpenShift
+# Kustomization for Deploying keycloak-gatekeeper on OpenShift
