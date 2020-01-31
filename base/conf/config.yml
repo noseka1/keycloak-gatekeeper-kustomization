@@ -31,9 +31,9 @@ redirection-url: https://keycloak-gatekeeper-keycloak.apps.cluster-e799.sandbox1
 #encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6T8xKHWf5RPfqAocuiQ6nUbNHyc3oF2toO2tr
 encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6T8
 # the name of the access cookie, defaults to kc-access
-#cookie-access-name:
+cookie-access-name: kc-access
 # the name of the refresh cookie, default to kc-state
-#cookie-refresh-name:
+cookie-refresh-name: kc-state
 # the upstream endpoint which we should proxy request
 upstream-url: https://enyt36qkaebyp.x.pipedream.net
 # upstream-keepalives specified wheather you want keepalive on the upstream endpoint
