@@ -12,10 +12,6 @@ spec:
       labels:
         app: keycloak-gatekeeper
     spec:
-#      securityContext:
-#        fsGroup: 1000
-#        runAsNonRoot: true
-#        runAsUser: 1000
       containers:
       - name: keycloak-gatekeeper
         image: quay.io/keycloak/keycloak-gatekeeper:8.0.1
