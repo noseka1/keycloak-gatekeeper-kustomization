@@ -31,11 +31,11 @@ redirection-url: https://keycloak-gatekeeper-keycloak.apps.cluster-e799.sandbox1
 #encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6T8xKHWf5RPfqAocuiQ6nUbNHyc3oF2toO2tr
 encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6T8
 # the name of the access cookie, defaults to kc-access
-cookie-access-name:
+#cookie-access-name:
 # the name of the refresh cookie, default to kc-state
-cookie-refresh-name:
+#cookie-refresh-name:
 # the upstream endpoint which we should proxy request
-upstream-url: http://httpd-keycloak.apps.cluster-e799.sandbox1862.opentlc.com
+upstream-url: https://enyt36qkaebyp.x.pipedream.net
 # upstream-keepalives specified wheather you want keepalive on the upstream endpoint
 upstream-keepalives: true
 # skip the tls verification of the upstream url
@@ -50,8 +50,8 @@ headers:
 # a map of claims that MUST exist in the token presented and the value is it MUST match
 # So for example, you could match the audience or the issuer or some custom attribute
 match-claims:
-  aud: openvpn
-  iss: https://keycloak.example.com/auth/realms/commons
+  aud: myclient
+  iss: https://keycloak-keycloak.apps.cluster-e799.sandbox1862.opentlc.com/auth/realms/myrealm
 # a list of claims to inject into the authentication headers i.e. given_name -> X-Auth-Given-Name
 add-claims:
 - given_name
@@ -91,3 +91,7 @@ cors-max-age: 1h
 
 # skip the tls verification of OIDC provider
 skip-openid-provider-tls-verify: true
+# switch on debug / verbose logging
+verbose: true
+# TESTING ONLY; bypass token verification, only expiration and roles enforced
+#skip-token-verification: true
